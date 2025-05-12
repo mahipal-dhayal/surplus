@@ -1,20 +1,9 @@
-import Image from "next/image";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import React from 'react'
 
-export default function Home() {
+const page = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-
-      <Header />
-      <div className="flex justify-center items-center ">
-      Hii this is home page
-      </div>
-      <Footer />
-      
-
-    </div>
-    
-  );
-
+    <></>
+  )
 }
+
+export default page
