@@ -157,6 +157,7 @@ const Footer = () => {
       </div>
       <div className="p-4">
         <div className="flex justify-center items-center gap-4  mt-4">
+          <span>Mahipal: </span>
           <span title="Mahipal LinkedIn">
             <a href="https://www.linkedin.com/in/mahipaldhayal/">
               <FaLinkedin className="text-blue-600" />
@@ -167,6 +168,7 @@ const Footer = () => {
               <FaGithub className="black" />
             </a>
           </span>
+          <span>Aman: </span>
           <span title="Aman LinkedIn">
             <a href="https://www.linkedin.com/in/aman-bhambhu-b7455022b/">
               <FaLinkedin className="text-blue-600" />
