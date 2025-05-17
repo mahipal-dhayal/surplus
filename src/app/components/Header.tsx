@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react";
+import { IoSearchCircleSharp } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 
 const Header = () => {
   return (
     <>
-    <nav>
-        <div className="main mt-3 ">
-            <div className="top flex items-center  bg-#ffffff space-x-7">
-                <p className='text-2xs font-bold pl-15 pr-15'>Welcome to Surplus, your one-stop shop for buying your favorite items!</p>
+      <nav>
+        {/* <div className="main mt-3 ">
+            <div className="top flex items-center  bg-white space-x-7">
+4                <p className='text-xs font-bold pl-15 pr-15'>Welcome to Surplus, your one-stop shop for buying your favorite items!</p>
                 <select  className="border rounded  px-2 py-1">
                     
                     <option value="English"> English</option> 
@@ -29,10 +31,35 @@ const Header = () => {
             </div>
             <div className="mid"></div>
             <div className="bottom"></div>
+        </div> */}
+        <div>
+          <div className="flex items-center justify-between">
+            <div className="">
+              <img
+                src="https://surplusgy.com/assets/photo/1737020966.logo.png"
+                alt="Error"
+                className="w-30"
+              />
+            </div>
+            <div className="flex items-center space-x-4t">
+              {" "}
+              <select className="border rounded  px-2 py-1 m-2">
+                <option value="English"> English</option>
+                <option value="Hindi">Hindi</option>
+              </select>
+              <select className="border rounded px-2 py-1">
+                <option>INR</option>
+              </select>
+              <IoSearchCircleSharp size={48} color="blue" />
+              <IoMenu size={48} />
+            </div>
+          </div>
+          <div>Middel part</div>
+          <div>End part or nav menu</div>
         </div>
-    </nav>
+      </nav>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
