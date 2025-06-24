@@ -1,5 +1,5 @@
 import { API_ENDPOINTS } from "./ApiMethos";
-import { callPostAPI } from "./ServiceMethods";
+import { CallGetAPI, callPostAPI, postMultiPartRequest } from "./ServiceMethods";
 
 
 
@@ -23,20 +23,14 @@ export const getResponse = (jsonResponse: any) => {
   }
 };
 
-export const homeApi = async (isAuth: Boolean = false, body: any) => {
-  const response = await callPostAPI({
+export const homeApi = async (isAuth: Boolean = true, body: any) => {
+  const response = await postMultiPartRequest({
     isAuth,
     body: JSON.stringify(body),
     url: API_ENDPOINTS.Home,
   });
 
 
-
-
-
-
-
-  
   console.log("Commonfunction>>>>loginresponse", body?.password);
   const result = await getResponse(response);
   if (result?.status && Object.keys(result.data).length > 0) {
@@ -47,22 +41,19 @@ export const homeApi = async (isAuth: Boolean = false, body: any) => {
   }
 };
 
+export const homeGetApi = async () => {
+  const response = await CallGetAPI({
+    url: API_ENDPOINTS.Home,
+  });
+  const result = await getResponse(response);
 
-
-
-// export const breedListApi = async (categoryId) => {
-//   const response = await CallGetAPI({
-//     url: `${API_END_POINTS.breedList}=${categoryId}`,
-//   });
-//   const result = await getResponse(response);
-
-//   if (result?.status && result.data) {
-//     return result;
-//   }
-//   else {
-//     throw result;
-//   }
-// };
+  if (result?.status && result.data) {
+    return result;
+  }
+  else {
+    throw result;
+  }
+};
 
 
 
